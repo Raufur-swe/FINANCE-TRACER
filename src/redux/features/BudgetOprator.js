@@ -29,8 +29,8 @@ const balanceSlice = createSlice({
             })
 
         },
-        addCategries: (acton, state) => {
-            state.categories = acton.payload
+        addCategries: (state , action ) => {
+            state.categories = action.payload
         }
 
     }
