@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import Card from './Card';
-import ExpenseTable from './ExpenseTable';
-import ExpenseChart from './ExpenseChart';
+import Card from '../componets/Card';
+import ExpenseTable from '../componets/ExpenseTable';
+import ExpenseChart from '../componets/ExpenseChart';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddBalnce, addCost } from '../redux/features/BudgetOprator';
+import { logout } from '../redux/features/AuthSlice';
 
 const Home = () => {
     const balance = useSelector((state) => state.budget.balance)
@@ -44,6 +45,8 @@ const Home = () => {
       <Card title="Remaining Balance" amount={balance - cost} />
      <ExpenseTable/>
       <ExpenseChart/> 
+
+      <button onClick={()=>dispatch(logout())} ></button>
     </div>
   )
 }

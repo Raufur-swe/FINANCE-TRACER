@@ -9,13 +9,13 @@ import { BrowserRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
 
-  <BrowserRouter>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistore} >
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistore} >
+      <BrowserRouter>
         <App />
-      </PersistGate>
-    </Provider>,
-  </BrowserRouter>
+      </BrowserRouter>
+    </PersistGate>
+  </Provider>,
 
 
 )
