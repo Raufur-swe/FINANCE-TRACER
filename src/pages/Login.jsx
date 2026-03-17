@@ -12,7 +12,7 @@ const Login = () => {
     const nevigate = useNavigate()
 
     const handleLogin = () => {
-        const savedUser = JSON.parse(localStorage.getItem("persist : root")) // persist is saving data use in store.js
+        const savedUser = JSON.parse(localStorage.getItem("persist:root")) // persist is saving data use in store.js
 
         if (savedUser) {
             const parsedAuth = JSON.parse(savedUser.auth);

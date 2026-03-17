@@ -22,14 +22,29 @@ const balanceSlice = createSlice({
 
         },
         addCost: (state, action) => {
-            state.cost += action.payload.amount
-            state.expenses.push({
-                amount: action.payload.amount,
-                categorie: action.payload.categorie
-            })
 
+            //  Extract data from action payload
+            const { amount, categorie } = action.payload
+
+            //  Validation:
+            // Prevent adding expense if:
+            // - category is missing
+            // - category is not a string
+            // - category is empty (e.g. "")
+            if (!categorie || typeof categorie !== "string" || categorie.trim() === "") {
+                return
+            }
+
+            //  Update total cost
+            state.cost += amount
+
+            //  Add new expense to expenses array
+            state.expenses.push({
+                amount,
+                categorie
+            })
         },
-        addCategries: (state , action ) => {
+        addCategries: (state, action) => {
             state.categories = action.payload
         }
 

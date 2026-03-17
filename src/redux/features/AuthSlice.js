@@ -12,7 +12,7 @@ reducers:{
     // signUp
     signUp :(state , action)=>{
         state.user = action.payload;
-        state.isAuthenticated = true;
+        state.isAuthenticated = false;
     },
     //login
     login :(state , action)=>{

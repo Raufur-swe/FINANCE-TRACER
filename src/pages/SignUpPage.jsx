@@ -5,20 +5,20 @@ import { signUp } from '../redux/features/AuthSlice';
 
 const SignUpPage = () => {
   
-  const [emial , setEmail] = useState("");
+  const [email , setEmail] = useState("");
   const[password , setPassword] = useState("")
     
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleSignUp = ()=>{
-    if(!emial && !password){
+    if(!email && !password){
          alert("Please fill all fields");
          return;
     }
-    const userData = {emial , password};
+    const userData = {email , password};
     dispatch(signUp(userData));
-    navigate("/")
+    navigate("/login")
   }
   return (
     <div>
