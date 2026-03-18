@@ -5,6 +5,7 @@ import ExpenseChart from '../componets/ExpenseChart'
 import { useDispatch, useSelector } from 'react-redux'
 import { AddBalnce, addCost } from '../redux/features/BudgetOprator'
 import { logout } from '../redux/features/AuthSlice'
+import BalanceTracker from '../componets/BalanceTracker'
 
 const Home = () => {
   const balance = useSelector((state) => state.budget.balance)
@@ -57,6 +58,7 @@ const Home = () => {
       <button onClick={handleAddBalance}>
         Set Balance
       </button>
+      <BalanceTracker/>
 
       {/* Cost */}
       <Card title="Total Cost" amount={cost} />

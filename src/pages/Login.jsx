@@ -37,7 +37,7 @@ const Login = () => {
             <input type="email" placeholder='Email' onChange={(e) => setemail(e.target.value)} />
             <input type="password" placeholder='pass......' onChange={(e) => setpassword(e.target.value)} />
             <button onClick={handleLogin} >Login</button>
-            <p>dont have an account??click Hare : <Link to="/signup" >Signup</Link></p>
+            <p>dont have an account??click Hare : <Link to="/signup">Signup</Link></p>
         </div>
     )
 }
