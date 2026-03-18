@@ -15,7 +15,8 @@ const rootReducer = combineReducers({
 const persistConfig = {
     key: "root",
     storage,
-    whitelist : ["auth" , "budget"] // controll what to persist
+    whitelist : ["auth" , "budget"] ,// controll what to persist
+    
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer) // saving budget reducer in local storage

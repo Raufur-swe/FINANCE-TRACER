@@ -5,46 +5,38 @@ const BalanceTracker = () => {
   const balance = useSelector((state) => state.budget.balance)
   const cost = useSelector((state) => state.budget.cost)
 
-  // 🧠 Calculate remaining balance
   const remaining = balance - cost
 
-  // ⚠️ Prevent divide by zero
   const percentage =
     balance > 0 ? Math.max(0, ((remaining / balance) * 100).toFixed(0)) : 0
 
-  // 🎨 Dynamic color based on percentage
-  let color = "green"
-  if (percentage < 50) color = "orange"
-  if (percentage < 20) color = "red"
+  // 🎨 Tailwind color
+  let barColor = "bg-green-500"
+  if (percentage < 50) barColor = "bg-yellow-400"
+  if (percentage < 20) barColor = "bg-red-500"
 
   return (
-    <div style={{ width: "100%", marginTop: "20px" }}>
-      
-      {/* 🧾 Info */}
-      <p><strong>Remaining:</strong> ${remaining}</p>
+    <div className="w-full mt-4 space-y-2">
 
-      {/* 📊 Progress Bar */}
-      <div
-        style={{
-          width: "100%",
-          background: "#eee",
-          borderRadius: "10px",
-          overflow: "hidden"
-        }}
-      >
-        <div
-          style={{
-            width: `${percentage}%`,
-            background: color,
-            padding: "10px",
-            textAlign: "center",
-            color: "white",
-            transition: "0.4s ease"
-          }}
-        >
-          {percentage}%
-        </div>
+      {/* 🔹 Info */}
+      <div className="flex justify-between text-sm text-gray-600">
+        <p>Remaining</p>
+        <p className="font-medium text-sky-600">${remaining}</p>
       </div>
+
+      {/* 🔹 Progress Bar (thin) */}
+      <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+        <div
+          className={`${barColor} h-2 rounded-full transition-all duration-500`}
+          style={{ width: `${percentage}%` }}
+        />
+      </div>
+
+      {/* 🔹 Percentage */}
+      <p className="text-xs text-right text-gray-400">
+        {percentage}%
+      </p>
+
     </div>
   )
 }
