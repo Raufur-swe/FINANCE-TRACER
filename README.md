@@ -3,7 +3,7 @@
 A simple and intuitive **Finance Tracker** web application to manage your income, expenses, and budget efficiently. This app helps users keep track of their financial activities and maintain better control over their spending.
 
 🔗 **Live Demo:**
-https://vercel.com/raufur-swes-projects/finance-tracer/756jJZKEeUV2TgzRfayRSLTBbtka
+[https://vercel.com/raufur-swes-projects/finance-tracer/756jJZKEeUV2TgzRfayRSLTBbtka](https://finance-tracer-teal.vercel.app)
 
 ---
 
